@@ -71,29 +71,32 @@
           </div>
         </div>
 
-        <!-- Segmented Tabs -->
-        <div class="flex w-full items-center rounded-full bg-gray-100 shadow-card mt-5 min-h-12 p-1">
-          <button type="button" (click)="setTab('all')" class="px-6 h-10 flex items-center rounded-full"
-                  [ngClass]="activeTab==='all' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
-            All ({{ counts.all }})
-          </button>
-          <button type="button" (click)="setTab('active')" class="px-6 h-10 flex items-center rounded-full"
-                  [ngClass]="activeTab==='active' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
-            Active ({{ counts.active }})
-          </button>
-          <button type="button" (click)="setTab('draft')" class="px-6 h-10 flex items-center rounded-full"
-                  [ngClass]="activeTab==='draft' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
-            Draft ({{ counts.draft }})
-          </button>
-          <button type="button" (click)="setTab('archived')" class="px-6 h-10 flex items-center rounded-full"
-                  [ngClass]="activeTab==='archived' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
-            Archived ({{ counts.archived }})
-          </button>
+          <!-- Segmented Tabs -->
+          <div class="flex w-full items-center rounded-full bg-gray-100 shadow-card min-h-12 p-1">
+            <button type="button" (click)="setTab('all')" class="px-6 h-10 flex items-center rounded-full"
+                    [ngClass]="activeTab==='all' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
+              All ({{ counts.all }})
+            </button>
+            <button type="button" (click)="setTab('active')" class="px-6 h-10 flex items-center rounded-full"
+                    [ngClass]="activeTab==='active' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
+              Active ({{ counts.active }})
+            </button>
+            <button type="button" (click)="setTab('draft')" class="px-6 h-10 flex items-center rounded-full"
+                    [ngClass]="activeTab==='draft' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
+              Draft ({{ counts.draft }})
+            </button>
+            <button type="button" (click)="setTab('archived')" class="px-6 h-10 flex items-center rounded-full"
+                    [ngClass]="activeTab==='archived' ? 'bg-white shadow-card text-primary-600 font-semibold' : 'text-gray-500'">
+              Archived ({{ counts.archived }})
+            </button>
+          </div>
         </div>
 
-        <!-- Templates List -->
-        <div class="flex p-6 items-start rounded-lg bg-white mt-5 w-full">
-          <div class="flex w-full flex-col gap-4">
+        <!-- Scrollable Content Area -->
+        <div class="flex-1 overflow-y-auto px-4 md:px-6 lg:px-8 pb-6">
+          <!-- Templates List -->
+          <div class="flex p-6 items-start rounded-lg bg-white mt-5 w-full">
+            <div class="flex w-full flex-col gap-4">
             <!-- Template Row -->
             <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 rounded-lg bg-gray-50 p-4" *ngFor="let template of filteredTemplates">
               <!-- Checkbox -->
