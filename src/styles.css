@@ -80,11 +80,10 @@
   }
 }
 
-/* Login Screen */
+/* Login Screen - Responsive without scroll */
 @media (min-width: 1500px) {
   .login-wrap {
     max-width: 70% !important;
-    max-height: 75vh;
   }
   .wel-txt .main {
     font-size: 3rem;
@@ -103,7 +102,6 @@
 @media (max-width: 1024px) {
   .login-wrap {
     max-width: 85% !important;
-    max-height: 75vh;
   }
 }
 
