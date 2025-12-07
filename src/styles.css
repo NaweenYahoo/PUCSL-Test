@@ -118,21 +118,15 @@
   }
 }
 
-/* Responsive scrolling for horizontal elements */
+/* Prevent all scrolling */
 .overflow-x-auto {
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 
-/* Mobile bottom navigation padding */
-@media (max-width: 767px) {
-  body {
-    padding-bottom: 80px;
-  }
+.overflow-y-auto {
+  overflow-y: hidden !important;
+}
 
-  main,
-  router-outlet,
-  app-root {
-    padding-bottom: 80px;
-  }
+.overflow-hidden {
+  overflow: hidden !important;
 }
