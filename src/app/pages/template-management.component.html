@@ -4,13 +4,15 @@
         <app-navigation></app-navigation>
       </div>
 
-      <!-- Main Content Area with Scroll -->
-      <div class="flex-1 ml-0 md:ml-72 p-4 md:p-6 lg:p-8 overflow-y-auto h-screen">
-        <!-- Header -->
-        <app-header [title]="'Template Management'"></app-header>
+      <!-- Main Content Area - Flex Column for Fixed Header -->
+      <div class="flex-1 ml-0 md:ml-72 h-screen flex flex-col">
+        <!-- Fixed Header Section -->
+        <div class="flex-shrink-0 p-4 md:p-6 lg:p-8 bg-gray-100 z-30">
+          <app-header [title]="'Template Management'"></app-header>
+        </div>
 
-        <!-- Action Bar aligned like target design -->
-        <div class="relative flex w-full p-4 justify-between items-center rounded-lg bg-white shadow-card mt-6 min-h-14">
+        <!-- Fixed Action Bar -->
+        <div class="flex-shrink-0 px-4 md:px-6 lg:px-8 pb-4 md:pb-6 lg:pb-8 bg-gray-100 z-30 relative">
           <!-- Left: Filters -->
           <button type="button" class="flex h-10 px-3 py-1.5 items-center gap-2 rounded bg-gray-100 hover:bg-gray-200">
             <span class="text-gray-700 text-base font-medium">Filters</span>
