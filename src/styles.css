@@ -115,16 +115,3 @@
     @apply mx-3;
   }
 }
-
-/* Prevent all scrolling */
-.overflow-x-auto {
-  overflow-x: hidden !important;
-}
-
-.overflow-y-auto {
-  overflow-y: hidden !important;
-}
-
-.overflow-hidden {
-  overflow: hidden !important;
-}
