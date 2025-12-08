@@ -1,8 +1,10 @@
-<div class="min-h-screen bg-[#F4F6F8]">
+<div class="h-screen flex flex-col bg-[#F4F6F8] overflow-hidden">
   <!-- Navigation -->
   <app-data-submitter-navigation></app-data-submitter-navigation>
 
-  <!-- Header -->
+  <!-- Fixed Header and Filter Section -->
+  <div class="flex-shrink-0 bg-[#F4F6F8]">
+    <!-- Header -->
   <header
     class="bg-white shadow-custom rounded-lg mx-3 sm:mx-4 md:mx-5 mt-3 sm:mt-4 md:mt-5 px-3 sm:px-4 md:px-6 py-3 sm:py-3 md:py-4"
   >
@@ -138,7 +140,7 @@
     </div>
   </header>
 
-  <!-- Filter Bar -->
+    <!-- Filter Bar -->
   <div
     class="bg-white shadow-custom rounded-lg mx-5 mt-5 px-4 py-4 flex items-center justify-between"
   >
@@ -178,9 +180,10 @@
       </svg>
     </button>
   </div>
+  </div>
 
   <!-- Main Content -->
-  <main class="ml-[92px] mr-5 mt-12 mb-8">
+  <main class="flex-1 overflow-y-auto ml-[92px] mr-5 mt-12 mb-8 pb-8">
     <div class="bg-white rounded-lg shadow-custom p-8">
       <div class="flex flex-col gap-5">
         <div
