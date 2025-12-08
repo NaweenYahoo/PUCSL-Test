@@ -1,11 +1,13 @@
-<div class="min-h-screen bg-[#F4F6F8]">
+<div class="h-screen flex flex-col bg-[#F4F6F8] overflow-hidden">
   <!-- Navigation -->
   <app-data-submitter-navigation></app-data-submitter-navigation>
 
-  <!-- Header -->
-  <header
-    class="bg-white shadow-custom rounded-lg mx-3 sm:mx-4 md:mx-5 mt-3 sm:mt-4 md:mt-5 px-3 sm:px-4 md:px-6 py-3 sm:py-3 md:py-4"
-  >
+  <!-- Fixed Header and Filter Section -->
+  <div class="flex-shrink-0 bg-[#F4F6F8]">
+    <!-- Header -->
+    <header
+      class="bg-white shadow-custom rounded-lg mx-3 sm:mx-4 md:mx-5 mt-3 sm:mt-4 md:mt-5 px-3 sm:px-4 md:px-6 py-3 sm:py-3 md:py-4"
+    >
     <div class="flex items-center justify-between gap-2 md:gap-4">
       <!-- Breadcrumb -->
       <div class="flex items-center gap-3">
