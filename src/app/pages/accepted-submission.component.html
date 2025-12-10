@@ -142,13 +142,13 @@
 
     <!-- Filter Bar -->
     <div
-      class="bg-white shadow-custom rounded-lg mx-5 mt-5 px-4 py-4 flex items-center justify-between"
+      class="bg-white shadow-custom rounded-lg mx-3 sm:mx-4 md:mx-5 mt-5 px-3 sm:px-4 md:px-6 py-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4"
     >
       <button
-        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5 h-[39px]"
+        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5 justify-center sm:justify-start"
       >
         <span
-          class="text-[#434343] text-base font-medium font-['Poppins'] capitalize"
+          class="text-[#434343] text-xs sm:text-base font-medium font-['Poppins'] capitalize"
           >Filters</span
         >
         <svg
@@ -165,10 +165,10 @@
       </button>
 
       <button
-        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5 h-[39px]"
+        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5 justify-center sm:justify-start"
       >
         <span
-          class="text-[#434343] text-base font-medium font-['Poppins'] capitalize"
+          class="text-[#434343] text-xs sm:text-base font-medium font-['Poppins'] capitalize"
           >Sort by</span
         >
         <svg
@@ -187,32 +187,32 @@
   </div>
 
   <!-- Main Content -->
-  <main class="flex-1 overflow-y-auto ml-[92px] mr-5 mt-12 mb-8 pb-8">
-    <div class="bg-white rounded-lg shadow-custom p-8">
-      <div class="flex flex-col gap-[22px]">
+  <main
+    class="flex-1 overflow-y-auto ml-0 md:ml-[92px] mr-3 sm:mr-4 md:mr-5 mt-4 sm:mt-6 md:mt-12 mb-20 md:mb-8 pb-8"
+  >
+    <div class="bg-white rounded-lg shadow-custom p-3 sm:p-4 md:p-8">
+      <div class="flex flex-col gap-3 sm:gap-4 md:gap-[22px]">
         <div
           *ngFor="let submission of acceptedSubmissions"
-          class="flex items-center justify-between p-3 rounded-lg border-l-4 border-[#12CEB0] bg-[#F2F4F7]"
+          class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-4 p-3 sm:p-4 md:p-3 rounded-lg border-l-4 border-[#12CEB0] bg-[#F2F4F7]"
         >
           <!-- Left Side - Info -->
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2 md:flex-1 min-w-0">
             <h3
-              class="text-[#232323] text-base font-medium font-['Poppins'] capitalize"
+              class="text-[#232323] text-sm sm:text-base font-medium font-['Poppins'] capitalize whitespace-nowrap overflow-hidden text-ellipsis"
             >
               {{ submission.id }} ({{ submission.title }})
-            </h3>
-            <p
-              class="text-[#6C6C6C] text-sm font-normal font-['Poppins'] capitalize"
-            >
               {{ submission.subId }}
-            </p>
+            </h3>
           </div>
 
           <!-- Tags -->
-          <div class="flex items-center gap-3">
+          <div
+            class="flex items-center gap-2 flex-wrap md:order-2 md:justify-end md:flex-shrink-0"
+          >
             <span
               *ngFor="let tag of submission.tags"
-              class="flex items-center justify-center px-2.5 py-1 rounded border-[0.25px]"
+              class="flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border-[0.25px] text-xs"
               [style.borderColor]="tag.color"
               [style.background]="
                 'linear-gradient(0deg, ' +
@@ -223,7 +223,7 @@
               "
             >
               <span
-                class="text-[10px] font-normal font-['Poppins'] capitalize"
+                class="text-[9px] sm:text-[10px] font-normal font-['Poppins'] capitalize"
                 [style.color]="tag.color"
               >
                 {{ tag.label }}
@@ -232,32 +232,32 @@
           </div>
 
           <!-- Dates -->
-          <div class="flex flex-col gap-1 w-[234px]">
-            <p
-              class="text-[#212121] text-sm font-normal font-['Poppins'] capitalize"
-            >
+          <div
+            class="flex flex-col gap-1 text-xs sm:text-sm md:order-3 md:flex-shrink-0"
+          >
+            <p class="text-[#212121] font-normal font-['Poppins'] capitalize">
               Submitted: {{ submission.submittedDate }}
             </p>
-            <p
-              class="text-[#10B99E] text-sm font-normal font-['Poppins'] capitalize"
-            >
-              Accepted : {{ submission.acceptedDate }}
+            <p class="text-[#10B99E] font-normal font-['Poppins'] capitalize">
+              Accepted: {{ submission.acceptedDate }}
             </p>
           </div>
 
           <!-- Action Buttons -->
-          <div class="flex items-center gap-3">
+          <div
+            class="flex flex-wrap items-center gap-2 sm:gap-3 md:flex-nowrap md:flex-shrink-0 md:justify-end md:order-4"
+          >
             <button
               (click)="onView(submission)"
-              class="flex items-center justify-center gap-2 w-[144px] h-[33px] px-2.5 py-1.5 rounded-lg bg-white hover:bg-gray-50 transition-colors"
+              class="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-1.5 h-[32px] sm:h-[33px] rounded-lg bg-white hover:bg-gray-50 transition-colors text-xs sm:text-sm flex-1 sm:flex-none min-w-0 sm:min-w-fit"
             >
               <span
-                class="text-[#080114] text-sm font-normal font-['Poppins'] capitalize"
+                class="text-[#080114] font-normal font-['Poppins'] capitalize truncate"
               >
                 View
               </span>
               <svg
-                class="w-[19px] h-[19px]"
+                class="w-4 h-4 sm:w-[19px] sm:h-[19px] flex-shrink-0"
                 viewBox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -281,15 +281,15 @@
 
             <button
               (click)="onHistory(submission)"
-              class="flex items-center justify-center gap-2 w-[144px] h-[33px] px-2.5 py-1.5 rounded-lg bg-white hover:bg-gray-50 transition-colors"
+              class="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-1.5 h-[32px] sm:h-[33px] rounded-lg bg-white hover:bg-gray-50 transition-colors text-xs sm:text-sm flex-1 sm:flex-none min-w-0 sm:min-w-fit"
             >
               <span
-                class="text-[#080114] text-sm font-normal font-['Poppins'] capitalize"
+                class="text-[#080114] font-normal font-['Poppins'] capitalize truncate"
               >
                 History
               </span>
               <svg
-                class="w-[19px] h-[19px]"
+                class="w-4 h-4 sm:w-[19px] sm:h-[19px] flex-shrink-0"
                 viewBox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -313,15 +313,15 @@
 
             <button
               (click)="onDownload(submission)"
-              class="flex items-center justify-center gap-2 w-[144px] h-[33px] px-2.5 py-1.5 rounded-lg bg-white hover:bg-gray-50 transition-colors"
+              class="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-1.5 h-[32px] sm:h-[33px] rounded-lg bg-white hover:bg-gray-50 transition-colors text-xs sm:text-sm flex-1 sm:flex-none min-w-0 sm:min-w-fit"
             >
               <span
-                class="text-[#080114] text-sm font-normal font-['Poppins'] capitalize"
+                class="text-[#080114] font-normal font-['Poppins'] capitalize truncate"
               >
                 Download
               </span>
               <svg
-                class="w-[19px] h-[19px]"
+                class="w-4 h-4 sm:w-[19px] sm:h-[19px] flex-shrink-0"
                 viewBox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -352,14 +352,14 @@
 
             <button
               (click)="openManualModal(submission)"
-              class="flex items-center justify-center gap-2 w-[144px] h-[33px] px-2.5 py-1.5 rounded-lg bg-white hover:bg-gray-50 transition-colors"
+              class="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-1.5 h-[32px] sm:h-[33px] rounded-lg bg-white hover:bg-gray-50 transition-colors text-xs sm:text-sm flex-1 sm:flex-none min-w-0 sm:min-w-fit"
             >
               <span
-                class="text-[#080114] text-sm font-normal font-['Poppins'] capitalize"
+                class="text-[#080114] font-normal font-['Poppins'] capitalize truncate"
                 >Manual</span
               >
               <svg
-                class="w-[19px] h-[19px]"
+                class="w-4 h-4 sm:w-[19px] sm:h-[19px] flex-shrink-0"
                 viewBox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
