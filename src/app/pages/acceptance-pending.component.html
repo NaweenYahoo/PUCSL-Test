@@ -145,10 +145,10 @@
       class="bg-white shadow-custom rounded-lg mx-3 sm:mx-4 md:mx-5 mt-5 px-3 sm:px-4 md:px-6 py-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4"
     >
       <button
-        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5"
+        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5 justify-center sm:justify-start"
       >
         <span
-          class="text-[#434343] text-base font-medium font-['Poppins'] capitalize"
+          class="text-[#434343] text-xs sm:text-base font-medium font-['Poppins'] capitalize"
           >Filters</span
         >
         <svg
@@ -165,10 +165,10 @@
       </button>
 
       <button
-        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5"
+        class="flex items-center gap-2 bg-[#F0F0F0] rounded px-2.5 py-1.5 justify-center sm:justify-start"
       >
         <span
-          class="text-[#434343] text-base font-medium font-['Poppins'] capitalize"
+          class="text-[#434343] text-xs sm:text-base font-medium font-['Poppins'] capitalize"
           >Sort by</span
         >
         <svg
@@ -187,12 +187,12 @@
   </div>
 
   <!-- Main Content -->
-  <main class="flex-1 overflow-y-auto ml-[92px] mr-5 mt-12 mb-8 pb-8">
-    <div class="bg-white rounded-lg shadow-custom p-8">
-      <div class="flex flex-col gap-5">
+  <main class="flex-1 overflow-y-auto ml-0 md:ml-[92px] mr-3 sm:mr-4 md:mr-5 mt-4 sm:mt-6 md:mt-12 mb-20 md:mb-8 pb-8">
+    <div class="bg-white rounded-lg shadow-custom p-3 sm:p-4 md:p-8">
+      <div class="flex flex-col gap-3 sm:gap-4 md:gap-5">
         <div
           *ngFor="let submission of submissions"
-          class="flex items-center justify-between p-[18px] rounded-lg border-l-4 border-[#12CEB0] bg-[#F2F4F7]"
+          class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-4 p-3 sm:p-4 md:p-[18px] rounded-lg border-l-4 border-[#12CEB0] bg-[#F2F4F7]"
         >
           <!-- Left Side - Info -->
           <div class="flex flex-col gap-2">
