@@ -187,7 +187,9 @@
   </div>
 
   <!-- Main Content -->
-  <main class="flex-1 overflow-y-auto ml-0 md:ml-[92px] mr-3 sm:mr-4 md:mr-5 mt-4 sm:mt-6 md:mt-12 mb-20 md:mb-8 pb-8">
+  <main
+    class="flex-1 overflow-y-auto ml-0 md:ml-[92px] mr-3 sm:mr-4 md:mr-5 mt-4 sm:mt-6 md:mt-12 mb-20 md:mb-8 pb-8"
+  >
     <div class="bg-white rounded-lg shadow-custom p-3 sm:p-4 md:p-8">
       <div class="flex flex-col gap-3 sm:gap-4 md:gap-[22px]">
         <div
@@ -199,12 +201,15 @@
             <h3
               class="text-[#232323] text-sm sm:text-base font-medium font-['Poppins'] capitalize whitespace-nowrap overflow-hidden text-ellipsis"
             >
-              {{ submission.id }} ({{ submission.title }}) {{ submission.subId }}
+              {{ submission.id }} ({{ submission.title }})
+              {{ submission.subId }}
             </h3>
           </div>
 
           <!-- Tags -->
-          <div class="flex items-center gap-2 flex-wrap md:order-2 md:justify-end md:flex-shrink-0">
+          <div
+            class="flex items-center gap-2 flex-wrap md:order-2 md:justify-end md:flex-shrink-0"
+          >
             <span
               *ngFor="let tag of submission.tags"
               class="flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border-[0.25px] text-xs"
@@ -227,21 +232,21 @@
           </div>
 
           <!-- Dates -->
-          <div class="flex flex-col gap-1 text-xs sm:text-sm md:order-3 md:flex-shrink-0">
-            <p
-              class="text-[#212121] font-normal font-['Poppins'] capitalize"
-            >
+          <div
+            class="flex flex-col gap-1 text-xs sm:text-sm md:order-3 md:flex-shrink-0"
+          >
+            <p class="text-[#212121] font-normal font-['Poppins'] capitalize">
               Submitted: {{ submission.submittedDate }}
             </p>
-            <p
-              class="text-[#10B99E] font-normal font-['Poppins'] capitalize"
-            >
+            <p class="text-[#10B99E] font-normal font-['Poppins'] capitalize">
               Accepted: {{ submission.acceptedDate }}
             </p>
           </div>
 
           <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center gap-2 sm:gap-3 md:flex-nowrap md:flex-shrink-0 md:justify-end md:order-4">
+          <div
+            class="flex flex-wrap items-center gap-2 sm:gap-3 md:flex-nowrap md:flex-shrink-0 md:justify-end md:order-4"
+          >
             <button
               (click)="onView(submission)"
               class="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-1.5 h-[32px] sm:h-[33px] rounded-lg bg-white hover:bg-gray-50 transition-colors text-xs sm:text-sm flex-1 sm:flex-none min-w-0 sm:min-w-fit"
