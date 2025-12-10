@@ -195,24 +195,24 @@
           class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-4 p-3 sm:p-4 md:p-3 rounded-lg border-l-4 border-[#12CEB0] bg-[#F2F4F7]"
         >
           <!-- Left Side - Info -->
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2 md:flex-1 min-w-0">
             <h3
-              class="text-[#232323] text-base font-medium font-['Poppins'] capitalize"
+              class="text-[#232323] text-sm sm:text-base font-medium font-['Poppins'] capitalize break-words"
             >
               {{ submission.id }} ({{ submission.title }})
             </h3>
             <p
-              class="text-[#6C6C6C] text-sm font-normal font-['Poppins'] capitalize"
+              class="text-[#6C6C6C] text-xs sm:text-sm font-normal font-['Poppins'] capitalize break-words"
             >
               {{ submission.subId }}
             </p>
           </div>
 
           <!-- Tags -->
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 flex-wrap md:order-2 md:justify-end md:flex-shrink-0">
             <span
               *ngFor="let tag of submission.tags"
-              class="flex items-center justify-center px-2.5 py-1 rounded border-[0.25px]"
+              class="flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border-[0.25px] text-xs"
               [style.borderColor]="tag.color"
               [style.background]="
                 'linear-gradient(0deg, ' +
@@ -223,7 +223,7 @@
               "
             >
               <span
-                class="text-[10px] font-normal font-['Poppins'] capitalize"
+                class="text-[9px] sm:text-[10px] font-normal font-['Poppins'] capitalize"
                 [style.color]="tag.color"
               >
                 {{ tag.label }}
@@ -232,21 +232,21 @@
           </div>
 
           <!-- Dates -->
-          <div class="flex flex-col gap-1 w-[234px]">
+          <div class="flex flex-col gap-1 text-xs sm:text-sm md:order-3 md:flex-shrink-0">
             <p
-              class="text-[#212121] text-sm font-normal font-['Poppins'] capitalize"
+              class="text-[#212121] font-normal font-['Poppins'] capitalize"
             >
               Submitted: {{ submission.submittedDate }}
             </p>
             <p
-              class="text-[#10B99E] text-sm font-normal font-['Poppins'] capitalize"
+              class="text-[#10B99E] font-normal font-['Poppins'] capitalize"
             >
-              Accepted : {{ submission.acceptedDate }}
+              Accepted: {{ submission.acceptedDate }}
             </p>
           </div>
 
           <!-- Action Buttons -->
-          <div class="flex items-center gap-3">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3 md:flex-nowrap md:flex-shrink-0 md:justify-end md:order-4">
             <button
               (click)="onView(submission)"
               class="flex items-center justify-center gap-2 w-[144px] h-[33px] px-2.5 py-1.5 rounded-lg bg-white hover:bg-gray-50 transition-colors"
